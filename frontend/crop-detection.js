@@ -1,15 +1,11 @@
-/* =========================================================
-   AGRICONNECT - CROP DETECTION
-   AI CROP HEALTH PROTOTYPE
-========================================================= */
+/* AGRICONNECT - CROP DETECTION
+   AI CROP HEALTH PROTOTYPE */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     console.log("AgriConnect Crop Detection JS loaded successfully.");
 
-    /* =========================================================
-       GET HTML ELEMENTS
-    ========================================================= */
+    /* GET HTML ELEMENTS */
 
     const fileInput = document.getElementById("fileInput");
     const uploadArea = document.getElementById("uploadArea");
@@ -64,18 +60,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================================
-       CLICK UPLOAD AREA
-    ========================================================= */
+    /* CLICK UPLOAD AREA */
 
     uploadArea.addEventListener("click", () => {
         fileInput.click();
     });
 
 
-    /* =========================================================
-       FILE SELECTED
-    ========================================================= */
+    /* FILE SELECTED */
 
     fileInput.addEventListener("change", (event) => {
 
@@ -90,9 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =========================================================
-       HANDLE IMAGE
-    ========================================================= */
+    /* HANDLE IMAGE */
 
     function handleImage(file) {
 
@@ -148,9 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================================
+    /* 
        REMOVE IMAGE
-    ========================================================= */
+     */
 
     if (removeImageBtn) {
 
@@ -177,9 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================================
-       DRAG & DROP
-    ========================================================= */
+    /* DRAG & DROP */
 
     uploadArea.addEventListener("dragover", (event) => {
 
@@ -235,9 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =========================================================
-       GET FARMER LOCATION
-    ========================================================= */
+    /* GET FARMER LOCATION */
 
     if (locationBtn) {
 
@@ -292,9 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================================
-       VALIDATE FORM
-    ========================================================= */
+    /* VALIDATE FORM */
 
     function validateForm() {
 
@@ -333,9 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================================
-       ANALYZE CROP
-    ========================================================= */
+    /* ANALYZE CROP */
 
     analyzeBtn.addEventListener("click", async () => {
 
@@ -389,9 +371,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =========================================================
-       SIMULATED AI ANALYSIS
-    ========================================================= */
+    /* SIMULATED AI ANALYSIS*/
 
     async function runAIAnalysis() {
 
@@ -460,9 +440,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================================
-       SAVE ANALYSIS RESULT
-    ========================================================= */
+    /* SAVE ANALYSIS RESULT */
 
     function saveAnalysisResult() {
 
@@ -508,9 +486,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================================
-       DELAY FUNCTION
-    ========================================================= */
+    /* DELAY FUNCTION */
 
     function delay(milliseconds) {
 
@@ -523,9 +499,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================================
-       INITIAL STATE
-    ========================================================= */
+    /* INITIAL STATE */
 
     if (previewContainer) {
 
