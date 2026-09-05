@@ -26,9 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const progressBar = document.getElementById("progressBar");
     const analysisStatus = document.getElementById("analysisStatus");
 
-    /* =========================================================
-       CHECK IMPORTANT ELEMENTS
-    ========================================================= */
+    /* CHECK IMPORTANT ELEMENTS*/
 
     if (!fileInput) {
         console.error("ERROR: fileInput not found.");
