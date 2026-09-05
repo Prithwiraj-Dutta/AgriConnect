@@ -46,9 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("All required HTML elements found.");
 
 
-    /* =========================================================
-       OPEN FILE SELECTOR
-    ========================================================= */
+    /* OPEN FILE SELECTOR*/
 
     if (browseBtn) {
         browseBtn.addEventListener("click", (event) => {
