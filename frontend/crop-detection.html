@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Crop Health | AgriConnect</title>
+
+    <link rel="stylesheet" href="crop-detection.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">🌾</div>
+
+            <div>
+                <h2>Agri<span>Connect</span></h2>
+                <small>Smart Farming • Better Future</small>
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#" class="active">Crop Health</a>
+            <a href="#">Weather</a>
+            <a href="#">Advisory</a>
+            <a href="#">Experts</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="language-btn">EN ▾</button>
+            <button class="profile-btn">👤</button>
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-container">
+
+        <!-- PAGE INTRO -->
+
+        <section class="page-heading">
+
+            <div>
+                <div class="eyebrow">
+                    <span class="pulse-dot"></span>
+                    AI-POWERED CROP INTELLIGENCE
+                </div>
+
+                <h1>
+                    Detect Crop Problems<br>
+                    <span>Before They Spread.</span>
+                </h1>
+
+                <p>
+                    Upload a clear image of your crop and let our AI
+                    analyze visible symptoms, estimate disease risk,
+                    and provide actionable farming guidance.
+                </p>
+            </div>
+
+            <div class="ai-status">
+                <div class="status-icon">✦</div>
+                <div>
+                    <strong>AI Engine</strong>
+                    <span>Ready for analysis</span>
+                </div>
+                <div class="online-dot"></div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= DETECTION GRID ================= -->
+
+        <section class="detection-grid">
+
+
+            <!-- LEFT SIDE : UPLOAD -->
+
+            <div class="upload-card">
+
+                <div class="card-top">
+
+                    <div>
+                        <span class="step-number">01</span>
+
+                        <h2>Upload Crop Image</h2>
+
+                        <p>
+                            Take a photo or select an existing image
+                            showing the affected part of your crop.
+                        </p>
+                    </div>
+
+                    <div class="camera-symbol">
+                        📷
+                    </div>
+
+                </div>
+
+
+                <!-- DROP AREA -->
+
+                <div class="upload-area" id="uploadArea">
+
+                    <input
+                        type="file"
+                        id="imageInput"
+                        accept="image/*"
+                        hidden
+                    >
+
+                    <div class="upload-content" id="uploadContent">
+
+                        <div class="upload-icon">
+                            <span>↑</span>
+                        </div>
+
+                        <h3>Drop your crop image here</h3>
+
+                        <p>
+                            or
+                            <button id="browseBtn" type="button">
+                                browse from device
+                            </button>
+                        </p>
+
+                        <small>
+                            JPG, JPEG or PNG • Recommended 224 × 224+
+                        </small>
+
+                    </div>
+
+
+                    <!-- IMAGE PREVIEW -->
+
+                    <div class="image-preview" id="imagePreview">
+
+                        <img id="previewImage" src="" alt="Crop preview">
+
+                        <button
+                            class="remove-image"
+                            id="removeImage"
+                            type="button"
+                        >
+                            ×
+                        </button>
+
+                        <div class="preview-label">
+                            ✓ Image ready for analysis
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE TIPS -->
+
+                <div class="image-tips">
+
+                    <div class="tip">
+                        <span>✓</span>
+                        <div>
+                            <strong>Good lighting</strong>
+                            <small>Avoid very dark images</small>
+                        </div>
+                    </div>
+
+                    <div class="tip">
+                        <span>✓</span>
+                        <div>
+                            <strong>Clear symptoms</strong>
+                            <small>Keep affected leaves visible</small>
+                        </div>
+                    </div>
+
+                    <div class="tip">
+                        <span>✓</span>
+                        <div>
+                            <strong>Single crop</strong>
+                            <small>Focus on one affected plant</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE : FARM DATA -->
+
+            <div class="details-card">
+
+                <div class="card-heading">
+
+                    <div class="step-number">02</div>
+
+                    <div>
+                        <h2>Farm Information</h2>
+
+                        <p>
+                            Help the AI understand your crop condition.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- CROP -->
+
+                <div class="form-group">
+
+                    <label for="cropSelect">
+                        Crop
+                    </label>
+
+                    <div class="select-wrapper">
+
+                        <span class="field-icon">🌱</span>
+
+                        <select id="cropSelect">
+
+                            <option value="">
+                                Select your crop
+                            </option>
+
+                            <option value="rice">
+                                Rice
+                            </option>
+
+                            <option value="wheat">
+                                Wheat
+                            </option>
+
+                            <option value="tomato">
+                                Tomato
+                            </option>
+
+                            <option value="potato">
+                                Potato
+                            </option>
+
+                            <option value="maize">
+                                Maize
+                            </option>
+
+                            <option value="cotton">
+                                Cotton
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CROP STAGE -->
+
+                <div class="form-group">
+
+                    <label for="stageSelect">
+                        Crop Growth Stage
+                    </label>
+
+                    <div class="select-wrapper">
+
+                        <span class="field-icon">🌿</span>
+
+                        <select id="stageSelect">
+
+                            <option value="">
+                                Select growth stage
+                            </option>
+
+                            <option value="seedling">
+                                Seedling
+                            </option>
+
+                            <option value="vegetative">
+                                Vegetative
+                            </option>
+
+                            <option value="flowering">
+                                Flowering
+                            </option>
+
+                            <option value="fruiting">
+                                Fruiting
+                            </option>
+
+                            <option value="maturity">
+                                Maturity
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="form-group">
+
+                    <label for="locationInput">
+                        Farm Location
+                    </label>
+
+                    <div class="location-input">
+
+                        <span>📍</span>
+
+                        <input
+                            type="text"
+                            id="locationInput"
+                            placeholder="e.g. Ranchi, Jharkhand"
+                        >
+
+                        <button
+                            type="button"
+                            id="locationBtn"
+                            title="Use my location"
+                        >
+                            ◎
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WEATHER MINI CARD -->
+
+                <div class="weather-mini">
+
+                    <div class="weather-icon">
+                        ☁️
+                    </div>
+
+                    <div class="weather-info">
+
+                        <span>Current conditions</span>
+
+                        <strong id="weatherStatus">
+                            Weather data will be analyzed
+                        </strong>
+
+                    </div>
+
+                    <div class="weather-arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+                <!-- ANALYZE -->
+
+                <button
+                    class="analyze-btn"
+                    id="analyzeBtn"
+                    type="button"
+                >
+
+                    <span class="analyze-icon">✦</span>
+
+                    <span id="analyzeText">
+                        Analyze Crop Health
+                    </span>
+
+                    <span class="btn-arrow">
+                        →
+                    </span>
+
+                </button>
+
+                <p class="privacy-note">
+                    🔒 Your crop image is used only for health analysis.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= AI PROCESS ================= -->
+
+        <section class="process-section">
+
+            <div class="process-title">
+
+                <span>HOW IT WORKS</span>
+
+                <h2>
+                    From Image to <span>Insight</span>
+                </h2>
+
+            </div>
+
+
+            <div class="process-line"></div>
+
+
+            <div class="process-grid">
+
+                <div class="process-step">
+
+                    <div class="process-icon">
+                        📷
+                    </div>
+
+                    <div>
+                        <span>01</span>
+                        <h3>Capture</h3>
+                        <p>
+                            Upload a clear image of the affected crop.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="process-icon ai-icon">
+                        ✦
+                    </div>
+
+                    <div>
+                        <span>02</span>
+                        <h3>AI Analysis</h3>
+                        <p>
+                            Our model identifies possible diseases or pests.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="process-icon">
+                        🌦️
+                    </div>
+
+                    <div>
+                        <span>03</span>
+                        <h3>Risk Forecast</h3>
+                        <p>
+                            Weather and crop stage help estimate risk.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="process-icon">
+                        🌱
+                    </div>
+
+                    <div>
+                        <span>04</span>
+                        <h3>Action</h3>
+                        <p>
+                            Receive practical management recommendations.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LOADING MODAL ================= -->
+
+        <div class="analysis-overlay" id="analysisOverlay">
+
+            <div class="analysis-modal">
+
+                <div class="scanner">
+
+                    <div class="scanner-ring"></div>
+
+                    <div class="scanner-icon">
+                        ✦
+                    </div>
+
+                </div>
+
+                <div class="analysis-text">
+
+                    <span class="analysis-label">
+                        AI ANALYSIS IN PROGRESS
+                    </span>
+
+                    <h2 id="analysisTitle">
+                        Examining your crop...
+                    </h2>
+
+                    <p id="analysisDescription">
+                        Detecting visible symptoms and plant abnormalities.
+                    </p>
+
+                </div>
+
+                <div class="analysis-progress">
+
+                    <div class="progress-bar">
+                        <div
+                            class="progress-fill"
+                            id="progressFill"
+                        ></div>
+                    </div>
+
+                    <span id="progressText">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="analysis-status" id="analysisStatus">
+                    Initializing AI engine...
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🌾 AgriConnect
+        </div>
+
+        <p>
+            AI-powered crop health intelligence for smarter farming.
+        </p>
+
+        <span>
+            © 2026 AgriConnect • Prototype
+        </span>
+
+    </footer>
+
+
+    <script src="crop-detection.js"></script>
+
+</body>
+</html>
+
